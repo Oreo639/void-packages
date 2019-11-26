@@ -1,0 +1,18 @@
+# Template file for 'sequencer64'
+pkgname=sequencer64
+version=0.96.6
+revision=1
+wrksrc="sequencer64-${version}"
+build_style=gnu-configure
+hostmakedepends="autoconf automake libtool pkg-config"
+makedepends="gtkmm2-devel alsa-lib-devel jack-devel"
+short_desc="Major reboot of the Seq24 midi editor, with new features"
+maintainer="oreo639 <oreo6391@gmail.com>"
+license="GPL-2.0-or-later, LGPL-3.0-or-later"
+homepage="https://github.com/ahlstromcj/sequencer64"
+distfiles="https://github.com/ahlstromcj/sequencer64/archive/${version}.tar.gz"
+checksum=b27178c45020235f235e622545a599145b3916ebe48729e0fa69e04cdc9c453b
+
+pre_configure() {
+	autoreconf -fi
+}
